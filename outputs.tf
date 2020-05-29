@@ -6,6 +6,11 @@ output "az_subnet_ids" {
   description = "Map of AZ names to subnet IDs"
 }
 
+output "public_subnet_ids" {
+  description = "IDs of the created public subnets"
+  value       = aws_subnet.public.*.id
+}
+
 output "az_route_table_ids" {
   value = zipmap(
     var.availability_zones,
