@@ -11,6 +11,11 @@ output "public_subnet_ids" {
   value       = aws_subnet.public.*.id
 }
 
+output "private_subnet_ids" {
+  description = "IDs of the created private subnets"
+  value       = aws_subnet.private.*.id
+}
+
 output "az_route_table_ids" {
   value = zipmap(
     var.availability_zones,
